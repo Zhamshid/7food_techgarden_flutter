@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:seven_food_test/constants.dart';
 import 'package:seven_food_test/next_button.dart';
 import 'package:seven_food_test/res/app_colors.dart';
 import 'package:seven_food_test/screens/login_screen.dart';
@@ -14,12 +13,14 @@ class SevenFood extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: ThemeData.dark().copyWith(
+        primaryColor: AppColors.primary,
+      ),
       routes: {
         LoginScreen.id: (context) => const LoginScreen(),
         RegistrationScreen.id: (context) => const RegistrationScreen(),
       },
       home: Scaffold(
-        backgroundColor: const Color(0xFF041538),
         body: RoundedButton(
           color: AppColors.primary,
           onPressed: () {

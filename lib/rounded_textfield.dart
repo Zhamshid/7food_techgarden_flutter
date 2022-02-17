@@ -29,7 +29,7 @@ class RoundedTextField extends StatelessWidget {
         decoration: InputDecoration(
           border: InputBorder.none,
           hintText: hintText!,
-          hintStyle: kHintStyle,
+          hintStyle: Constants.kHintStyle,
         ),
       ),
     );

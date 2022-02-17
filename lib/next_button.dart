@@ -29,7 +29,7 @@ class RoundedButton extends StatelessWidget {
               Expanded(
                 child: Text(
                   'ДАЛЕЕ',
-                  style: kButtonTextStyle,
+                  style: Constants.kButtonTextStyle,
                 ),
               ),
             ],
