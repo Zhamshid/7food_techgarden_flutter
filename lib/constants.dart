@@ -16,4 +16,10 @@ class Constants {
     color: AppColors.gray,
     fontWeight: FontWeight.w400,
   );
+
+  static const kOnBoardingButtonTextStyle = TextStyle(
+    color: Colors.white,
+    fontSize: 14,
+    letterSpacing: 0.8,
+  );
 }

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:seven_food_test/constants.dart';
+import 'package:seven_food_test/custom_rounded_button.dart';
 import 'package:seven_food_test/res/app_colors.dart';
 import 'package:seven_food_test/rounded_textfield.dart';
 
@@ -21,7 +23,7 @@ class _LoginScreenState extends State<LoginScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
-            children: const <Widget>[
+            children: <Widget>[
               Text(
                 'Вход в 7Food',
                 style: TextStyle(
@@ -39,12 +41,16 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
               SizedBox(height: 24),
-              RoundedTextField(hintText: 'Номер телефона',),
+              RoundedTextField(
+                hintText: 'Номер телефона',
+              ),
               SizedBox(height: 12),
-              RoundedTextField(hintText: 'Пароль',),
+              RoundedTextField(
+                hintText: 'Пароль',
+              ),
               SizedBox(height: 24),
               Text(
-                'ЗАБЫЛИ ПАРОЛЬ?',
+                'Забыли пароль?'.toUpperCase(),
                 style: TextStyle(
                   letterSpacing: 0.6,
                   fontSize: 14,
@@ -54,7 +60,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               SizedBox(height: 330),
               Text(
-                'Зарегистрироваться',
+                'Зарегистрироваться'.toUpperCase(),
                 style: TextStyle(
                   letterSpacing: 0.6,
                   fontSize: 14,
@@ -62,6 +68,15 @@ class _LoginScreenState extends State<LoginScreen> {
                   fontWeight: FontWeight.w600,
                 ),
               ),
+              SizedBox(height: 16),
+              CustomRoundedButton(
+                colour: AppColors.primary.withOpacity(0.56),
+                title: 'войти',
+                widthButton: double.infinity,
+                heightButton: 56,
+                style: Constants.kOnBoardingButtonTextStyle,
+                onPressed: () {},
+              )
             ],
           ),
         ),
@@ -69,4 +84,3 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 }
-
