@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:seven_food_test/next_button.dart';
+import 'package:seven_food_test/commons/widgets/next_button.dart';
 import 'package:seven_food_test/res/app_colors.dart';
 import 'package:seven_food_test/screens/login_screen.dart';
 import 'package:seven_food_test/screens/onboarding.dart';

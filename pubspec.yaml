@@ -39,7 +39,7 @@ flutter:
   fonts:
     - family: Manrope
       fonts:
-        - asset: fonts/Manrope.ttf
+        - asset: fonts/ManropeRegular.ttf
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf

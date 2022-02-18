@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:seven_food_test/commons/onboarding_model.dart';
-import 'package:seven_food_test/constants.dart';
-import 'package:seven_food_test/custom_rounded_button.dart';
+import 'package:seven_food_test/commons/constants/constants.dart';
+import 'package:seven_food_test/commons/widgets/custom_rounded_button.dart';
 import 'package:seven_food_test/res/app_colors.dart';
 import 'package:seven_food_test/main.dart';
 import 'package:seven_food_test/screens/login_screen.dart';
@@ -69,11 +69,14 @@ class _OnBoardingState extends State<OnBoarding> {
                       ),
                     ),
                     SizedBox(
-                      height: 24,
+                      height: 20,
                     ),
                     Text(
                       contents[i].title!,
                       style: TextStyle(
+                        fontFamily: 'Manrope',
+                        letterSpacing: 0.1,
+                        fontWeight: FontWeight.w700,
                         color: Colors.white,
                         fontSize: 28,
                       ),
@@ -95,7 +98,7 @@ class _OnBoardingState extends State<OnBoarding> {
                             duration: Duration(milliseconds: 2),
                             curve: Curves.bounceIn);
                       },
-                    )
+                    ),
                   ],
                 ),
               ),
@@ -108,8 +111,8 @@ class _OnBoardingState extends State<OnBoarding> {
 
   Container buildDot(int index, BuildContext context) {
     return Container(
-      height: 10,
-      width: currentIndex == index ? 48 : 10,
+      height: currentIndex == index ? 10 : 12,
+      width: currentIndex == index ? 48 : 12,
       margin: EdgeInsets.only(right: 5),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(56),
