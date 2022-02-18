@@ -7,10 +7,16 @@ class RoundedTextField extends StatelessWidget {
     Key? key,
     required this.hintText,
     this.obscureText,
+    this.onPressed,
+    this.icon,
+    this.keyboardType,
   }) : super(key: key);
 
   final String? hintText;
   final bool? obscureText;
+  final void Function()? onPressed;
+  final Icon? icon;
+  final TextInputType? keyboardType;
 
   @override
   Widget build(BuildContext context) {
@@ -30,16 +36,27 @@ class RoundedTextField extends StatelessWidget {
           ),
         ],
       ),
-      child: TextField(
-        style: Constants.kTextFieldStyle,
-        obscureText:obscureText == null? false : obscureText!,
-        inputFormatters: [],
-        decoration: InputDecoration(
-          contentPadding: EdgeInsets.only(left: 20,right: 20),
-          border: InputBorder.none,
-          hintText: hintText!,
-          hintStyle: Constants.kHintStyle,
-        ),
+      child: Row(
+        children: [
+          Flexible(
+            child: TextField(
+              style: Constants.kTextFieldStyle,
+              keyboardType: keyboardType,
+              obscureText: obscureText == null ? false : obscureText!,
+              inputFormatters: const [],
+              decoration: InputDecoration(
+                contentPadding: EdgeInsets.only(left: 20, right: 20),
+                border: InputBorder.none,
+                hintText: hintText!,
+                hintStyle: Constants.kHintStyle,
+              ),
+            ),
+          ),
+          IconButton(
+              padding: EdgeInsets.only(right: 20),
+              onPressed: onPressed,
+              icon: icon == null ? SizedBox() : icon!),
+        ],
       ),
     );
   }

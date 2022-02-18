@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:seven_food_test/commons/constants/constants.dart';
 import 'package:seven_food_test/commons/widgets/custom_rounded_button.dart';
@@ -13,7 +14,10 @@ class LoginScreen extends StatefulWidget {
   _LoginScreenState createState() => _LoginScreenState();
 }
 
+
 class _LoginScreenState extends State<LoginScreen> {
+  bool _obscureText = true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,10 +41,26 @@ class _LoginScreenState extends State<LoginScreen> {
                 SizedBox(height: 24),
                 RoundedTextField(
                   hintText: 'Номер телефона',
+                  keyboardType: TextInputType.phone,
                 ),
                 SizedBox(height: 12),
                 RoundedTextField(
                   hintText: 'Пароль',
+                  obscureText: _obscureText,
+                  icon: Icon(
+                    _obscureText == true
+                        ? Icons.visibility
+                        : Icons.visibility_off,
+                    color: AppColors.gray,
+                  ),
+                  onPressed: () {
+                    setState(
+                      () {
+                        _obscureText = !_obscureText;
+                        print(_obscureText);
+                      },
+                    );
+                  },
                 ),
                 SizedBox(height: 24),
                 Text(
