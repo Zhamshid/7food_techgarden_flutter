@@ -17,58 +17,58 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(24),
-          child: Center(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Text(
-                  'Регистрация в 7Food',
-                  style: Constants.kHeaderTextStyle,
-                ),
-                SizedBox(
-                  height: 8,
-                ),
-                Text(
-                  'Введите номер телефона, чтобы войти в приложение через СМС-код',
-                  style: Constants.kHeader2TextStyle,
-                ),
-                SizedBox(height: 24),
-                RoundedTextField(
-                  hintText: 'Ваше имя',
-                ),
-                SizedBox(height: 12),
-                RoundedTextField(
-                  hintText: 'Номер телефона',
-                ),
-                SizedBox(height: 12),
-                RoundedTextField(
-                  hintText: 'Пароль',
-                ),
-                SizedBox(height: 12),
-                RoundedTextField(
-                  hintText: 'Повторите пароль',
-                ),
-                SizedBox(height: 210),
-                Text(
-                  'У меня уже есть акканут'.toUpperCase(),
-                  style: Constants.kAccountInfoTextStyle,
-                ),
-                SizedBox(height: 16),
-                CustomRoundedButton(
-                  colour: AppColors.primary.withOpacity(0.56),
-                  title: 'Зарегистрировться',
-                  widthButton: double.infinity,
-                  heightButton: 56,
-                  style: Constants.kOnBoardingButtonTextStyle,
-                  onPressed: () {},
-                ),
-              ],
-            ),
+      body: Padding(
+        padding: const EdgeInsets.all(24),
+        child: Center(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text(
+                'Регистрация в 7Food',
+                style: Constants.kHeaderTextStyle,
+              ),
+              SizedBox(
+                height: 8,
+              ),
+              Text(
+                'Введите номер телефона, чтобы войти в приложение через СМС-код',
+                style: Constants.kHeader2TextStyle,
+              ),
+              SizedBox(height: 24),
+              RoundedTextField(
+                hintText: 'Ваше имя',
+              ),
+              SizedBox(height: 12),
+              RoundedTextField(
+                hintText: 'Номер телефона',
+              ),
+              SizedBox(height: 12),
+              RoundedTextField(
+                hintText: 'Пароль',
+              ),
+              SizedBox(height: 12),
+              RoundedTextField(
+                hintText: 'Повторите пароль',
+              ),
+              SizedBox(height: 210),
+              Text(
+                'У меня уже есть акканут'.toUpperCase(),
+                style: Constants.kAccountInfoTextStyle,
+              ),
+              SizedBox(height: 16),
+              CustomRoundedButton(
+                colour: AppColors.primary.withOpacity(0.56),
+                title: 'Зарегистрировться',
+                widthButton: double.infinity,
+                heightButton: 56,
+                style: Constants.kOnBoardingButtonTextStyle,
+                onPressed: () {
+                },
+              ),
+            ],
           ),
         ),
       ),

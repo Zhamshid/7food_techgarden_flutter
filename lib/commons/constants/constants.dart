@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_multi_formatter/formatters/masked_input_formatter.dart';
 import 'package:seven_food_test/res/app_colors.dart';
 
 
@@ -54,4 +55,5 @@ class Constants {
     fontSize: 14,
     letterSpacing: 0.8,
   );
+
 }

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:seven_food_test/commons/widgets/next_button.dart';
 import 'package:seven_food_test/res/app_colors.dart';
+import 'package:seven_food_test/screens/confirm_screen.dart';
+import 'package:seven_food_test/screens/forgot_password_screen.dart';
 import 'package:seven_food_test/screens/login_screen.dart';
 import 'package:seven_food_test/screens/onboarding.dart';
 import 'package:seven_food_test/screens/registration_screen.dart';
@@ -22,6 +24,8 @@ class SevenFood extends StatelessWidget {
         OnBoarding.id: (context) => const OnBoarding(),
         LoginScreen.id: (context) => const LoginScreen(),
         RegistrationScreen.id: (context) => const RegistrationScreen(),
+        ForgotPasswordScreen.id: (context) => const ForgotPasswordScreen(),
+        ConfirmScreen.id: (context) => const ConfirmScreen(),
       },
     );
   }
