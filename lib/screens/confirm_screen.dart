@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:seven_food_test/commons/constants/constants.dart';
 import 'package:seven_food_test/commons/widgets/circle_confirm_field.dart';
-import 'package:seven_food_test/res/app_colors.dart';
 
 class ConfirmScreen extends StatefulWidget {
   const ConfirmScreen({Key? key}) : super(key: key);
+
   static const id = "confirm_screen";
 
   @override
@@ -15,6 +14,8 @@ class ConfirmScreen extends StatefulWidget {
 class _ConfirmScreenState extends State<ConfirmScreen> {
   @override
   Widget build(BuildContext context) {
+    final phoneNumber = ModalRoute.of(context)?.settings.arguments;
+    print(phoneNumber);
     return Scaffold(
       backgroundColor: Colors.white,
       body: Padding(
@@ -31,7 +32,8 @@ class _ConfirmScreenState extends State<ConfirmScreen> {
                 height: 8,
               ),
               Text(
-                'Введите СМС-код, отправленный \n на номер чтобы +7 771 973 17 17',
+
+                'Введите СМС-код, отправленный \n на номер чтобы $phoneNumber',
                 style: Constants.kHeader2TextStyle,
               ),
               SizedBox(
@@ -59,8 +61,10 @@ class _ConfirmScreenState extends State<ConfirmScreen> {
               SizedBox(
                 height: 24,
               ),
-              Text('Вы можете отправить код повторно \nчерез:  02:22',
-              style: Constants.kHeader2TextStyle,),
+              Text(
+                'Вы можете отправить код повторно \nчерез:  02:22',
+                style: Constants.kHeader2TextStyle,
+              ),
             ],
           ),
         ),

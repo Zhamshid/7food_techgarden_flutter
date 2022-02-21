@@ -16,54 +16,64 @@ class ForgotPasswordScreen extends StatefulWidget {
 }
 
 class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
+  String? phoneNumber;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
       body: Padding(
-          padding: const EdgeInsets.only(left: 24, top: 100, right: 24),
-          child: Center(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text(
-                  'Воостановить пароль',
-                  style: Constants.kHeaderTextStyle,
-                ),
-                SizedBox(
-                  height: 8,
-                ),
-                Text(
-                  'Введите номер телефона для \n '
-                  'воостановления',
-                  style: Constants.kHeader2TextStyle,
-                ),
-                SizedBox(
-                  height: 24,
-                ),
-                RoundedTextField(
-                  hintText: 'Номер телефона',
-                  inputFormatters: [
-                    MaskedInputFormatter('+# ### ### ## ##'),
-                  ],
-                ),
-                SizedBox(
-                  height: 446,
-                ),
-                CustomRoundedButton(
-                  title: 'Воостановить',
-                  colour: AppColors.primary,
-                  style: Constants.kOnBoardingButtonTextStyle,
-                  heightButton: 56,
-                  widthButton: double.infinity,
-                  onPressed: () {
-                    Navigator.pushNamed(context, ConfirmScreen.id);
-                  },
-                )
-              ],
-            ),
-          )),
+        padding: const EdgeInsets.only(left: 24, top: 100, right: 24),
+        child: Center(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(
+                'Воостановить пароль',
+                style: Constants.kHeaderTextStyle,
+              ),
+              SizedBox(
+                height: 8,
+              ),
+              Text(
+                'Введите номер телефона для \n '
+                'воостановления',
+                style: Constants.kHeader2TextStyle,
+              ),
+              SizedBox(
+                height: 24,
+              ),
+              RoundedTextField(
+                hintText: 'Номер телефона',
+                keyboardType: TextInputType.phone,
+                onChanged: (value){
+                  phoneNumber = value;
+                },
+                onPressed: (){
+                  Navigator.pushNamed(context, ConfirmScreen.id);
+                },
+                inputFormatters: [
+                  MaskedInputFormatter('+# ### ### ## ##'),
+                ],
+              ),
+              SizedBox(
+                height: 446,
+              ),
+              CustomRoundedButton(
+                title: 'Воостановить',
+                colour: AppColors.primary,
+                style: Constants.kOnBoardingButtonTextStyle,
+                heightButton: 56,
+                widthButton: double.infinity,
+                onPressed: () {
+                  Navigator.pushNamed(context, ConfirmScreen.id,arguments: phoneNumber);
+                },
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

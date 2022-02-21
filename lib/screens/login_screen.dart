@@ -77,7 +77,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               SizedBox(height: 24),
               GestureDetector(
-                onTap: (){
+                onTap: () {
                   Navigator.pushNamed(context, ForgotPasswordScreen.id);
                 },
                 child: Text(
@@ -86,9 +86,14 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
               SizedBox(height: 330),
-              Text(
-                'Зарегистрироваться'.toUpperCase(),
-                style: Constants.kAccountInfoTextStyle,
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, RegistrationScreen.id);
+                },
+                child: Text(
+                  'Зарегистрироваться'.toUpperCase(),
+                  style: Constants.kAccountInfoTextStyle,
+                ),
               ),
               SizedBox(height: 16),
               CustomRoundedButton(
