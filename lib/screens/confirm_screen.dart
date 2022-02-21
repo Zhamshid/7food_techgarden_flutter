@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:seven_food_test/commons/constants/constants.dart';
 import 'package:seven_food_test/commons/widgets/circle_confirm_field.dart';
+import 'package:seven_food_test/screens/forgot_password_screen.dart';
 
 class ConfirmScreen extends StatefulWidget {
   const ConfirmScreen({Key? key}) : super(key: key);
@@ -14,8 +15,8 @@ class ConfirmScreen extends StatefulWidget {
 class _ConfirmScreenState extends State<ConfirmScreen> {
   @override
   Widget build(BuildContext context) {
-    final phoneNumber = ModalRoute.of(context)?.settings.arguments;
-    print(phoneNumber);
+    final arg = ModalRoute.of(context)!.settings.arguments as Map;
+    final phoneNumber = arg['phoneNumber'];
     return Scaffold(
       backgroundColor: Colors.white,
       body: Padding(
@@ -61,9 +62,12 @@ class _ConfirmScreenState extends State<ConfirmScreen> {
               SizedBox(
                 height: 24,
               ),
-              Text(
-                'Вы можете отправить код повторно \nчерез:  02:22',
-                style: Constants.kHeader2TextStyle,
+              Visibility(
+                visible: false,
+                child: Text(
+                  'Вы можете отправить код повторно \nчерез:  02:22',
+                  style: Constants.kHeader2TextStyle,
+                ),
               ),
             ],
           ),

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:seven_food_test/commons/widgets/next_button.dart';
 import 'package:seven_food_test/res/app_colors.dart';
 import 'package:seven_food_test/screens/confirm_screen.dart';
 import 'package:seven_food_test/screens/forgot_password_screen.dart';
@@ -18,6 +17,7 @@ class SevenFood extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
         primaryColor: AppColors.primary,
+        platform: TargetPlatform.iOS,
       ),
       initialRoute: OnBoarding.id,
       routes: {

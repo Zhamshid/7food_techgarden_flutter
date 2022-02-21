@@ -67,7 +67,10 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                 heightButton: 56,
                 widthButton: double.infinity,
                 onPressed: () {
-                  Navigator.pushNamed(context, ConfirmScreen.id,arguments: phoneNumber);
+                  Navigator.pushNamed(context, ConfirmScreen.id,arguments: {
+                    'phoneNumber':phoneNumber,
+                    'id':10,
+                  });
                 },
               ),
             ],
