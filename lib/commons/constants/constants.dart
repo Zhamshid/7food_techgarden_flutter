@@ -35,6 +35,13 @@ class Constants {
     color: AppColors.black,
   );
 
+  static const kCircleFieldStyle = TextStyle(
+    color: AppColors.black,
+    fontFamily: "Manrope",
+    fontSize: 36,
+    fontWeight: FontWeight.w700,
+  );
+
   static const kHeader2TextStyle = TextStyle(
     fontWeight: FontWeight.w400,
     fontSize: 18,

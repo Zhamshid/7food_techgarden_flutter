@@ -1,7 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:seven_food_test/commons/constants/constants.dart';
-import 'package:seven_food_test/commons/widgets/rounded_textfield.dart';
+import 'package:seven_food_test/commons/widgets/circle_confirm_field.dart';
+import 'package:seven_food_test/res/app_colors.dart';
 
 class ConfirmScreen extends StatefulWidget {
   const ConfirmScreen({Key? key}) : super(key: key);
@@ -39,39 +40,18 @@ class _ConfirmScreenState extends State<ConfirmScreen> {
               SizedBox(
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: const [
                     Flexible(
-                      child: RoundedTextField(
-                        width: 73,
-                        height: 73,
-                        contentPaddingLeft: 1,
-                        contentPaddingRight: 1,
-                      ),
+                      child: CircleConfirmField(),
                     ),
                     Flexible(
-                      child: RoundedTextField(
-                        width: 73,
-                        height: 73,
-                        contentPaddingLeft: 1,
-                        contentPaddingRight: 1,
-                      ),
+                      child: CircleConfirmField(),
                     ),
                     Flexible(
-                      child: RoundedTextField(
-                        width: 73,
-                        height: 73,
-                        contentPaddingLeft: 1,
-                        contentPaddingRight: 1,
-                      ),
+                      child: CircleConfirmField(),
                     ),
                     Flexible(
-                      child: RoundedTextField(
-                        width: 73,
-                        height: 73,
-                        contentPaddingLeft: 1,
-                        contentPaddingRight: 1,
-                      ),
+                      child: CircleConfirmField(),
                     ),
                   ],
                 ),
@@ -79,6 +59,8 @@ class _ConfirmScreenState extends State<ConfirmScreen> {
               SizedBox(
                 height: 24,
               ),
+              Text('Вы можете отправить код повторно \nчерез:  02:22',
+              style: Constants.kHeader2TextStyle,),
             ],
           ),
         ),
