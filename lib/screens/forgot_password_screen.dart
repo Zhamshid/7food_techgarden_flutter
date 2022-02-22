@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_multi_formatter/formatters/masked_input_formatter.dart';
 import 'package:seven_food_test/commons/constants/constants.dart';
@@ -17,6 +18,7 @@ class ForgotPasswordScreen extends StatefulWidget {
 
 class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
   String? phoneNumber;
+
 
   @override
   Widget build(BuildContext context) {
@@ -47,10 +49,10 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
               RoundedTextField(
                 hintText: 'Номер телефона',
                 keyboardType: TextInputType.phone,
-                onChanged: (value){
+                onChanged: (value) {
                   phoneNumber = value;
                 },
-                onPressed: (){
+                onPressed: () {
                   Navigator.pushNamed(context, ConfirmScreen.id);
                 },
                 inputFormatters: [
@@ -67,9 +69,9 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                 heightButton: 56,
                 widthButton: double.infinity,
                 onPressed: () {
-                  Navigator.pushNamed(context, ConfirmScreen.id,arguments: {
-                    'phoneNumber':phoneNumber,
-                    'id':10,
+                  Navigator.pushNamed(context, ConfirmScreen.id, arguments: {
+                    'phoneNumber': phoneNumber,
+                    'id': 10,
                   });
                 },
               ),
