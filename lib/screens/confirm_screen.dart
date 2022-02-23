@@ -17,13 +17,13 @@ class _ConfirmScreenState extends State<ConfirmScreen> {
   bool _isTimeVisible = true;
   bool _isSendAgainVisible = false;
 
-  String _timeToShow = "02:30";
+  String _timeToShow = "00:10";
   int? minutes;
   int? seconds;
 
   void leftTime() {
     late Timer timer;
-    int startSeconds = 150; //time limit
+    int startSeconds = 10; //time limit
     timer = Timer.periodic(
       Duration(seconds: 1),
       (time) {
@@ -114,11 +114,14 @@ class _ConfirmScreenState extends State<ConfirmScreen> {
                   style: Constants.kHeader2TextStyle,
                 ),
               ),
+              SizedBox(
+                height: 100,
+              ),
               Visibility(
                 visible: _isSendAgainVisible,
                 child: Text(
-                  'Send again',
-                  style: Constants.kHeader2TextStyle,
+                  'Отправить код повторно'.toUpperCase(),
+                  style: Constants.kSendAgainTextStyle,
                 ),
               ),
             ],
