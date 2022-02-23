@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:seven_food_test/commons/constants/constants.dart';
 import 'package:seven_food_test/commons/widgets/circle_confirm_field.dart';
@@ -15,63 +17,46 @@ class _ConfirmScreenState extends State<ConfirmScreen> {
   bool _isTimeVisible = true;
   bool _isSendAgainVisible = false;
 
-  // String? intToTimeLeft(int value) {
-  //   int m;
-  //   int s;
-  //   String? minuteLeft;
-  //   String? secondsLeft;
-  //   String? result;
-  //
-  //   setState(() {
-  //     if (value > 0) {
-  //
-  //       m = value ~/ 60;
-  //       s = value - (m * 60);
-  //
-  //       value--;
-  //       minuteLeft =
-  //           m.toString().length < 2 ? "0" + m.toString() : m.toString();
-  //       secondsLeft =
-  //           s.toString().length < 2 ? "0" + s.toString() : s.toString();
-  //       result = "$minuteLeft:$secondsLeft";
-  //
-  //       print(result);
-  //     }
-  //     else{
-  //       _isTimeVisible = false;
-  //     }
-  //
-  //   });
-  //   return result;
-  // }
+  String _timeToShow = "02:30";
+  int? minutes;
+  int? seconds;
 
-  int _countdownTime = 60;
-  String? _result;
-
-  void startTimer() {
-    if (_countdownTime == 0) {
-      setState(
-        () {
-          _isTimeVisible = false;
-          _isSendAgainVisible = true;
-        },
-      );
-    } else {
-      setState(
-        () {
-          _isTimeVisible = true;
-          _isSendAgainVisible = false;
-          _countdownTime = _countdownTime - 1;
-          int minutes = _countdownTime ~/ 60;
-          int seconds = (_countdownTime % 60);
-          _result = minutes.toString().padLeft(2, "0") +
+  void leftTime() {
+    late Timer timer;
+    int startSeconds = 150; //time limit
+    timer = Timer.periodic(
+      Duration(seconds: 1),
+      (time) {
+        startSeconds = startSeconds - 1;
+        setState(() {
+          if (startSeconds == 0) {
+            _isTimeVisible = false;
+            _isSendAgainVisible = true;
+            timer.cancel();
+          }
+        });
+        setState(() {
+          minutes = startSeconds ~/ 60;
+          seconds = (startSeconds % 60);
+          _timeToShow = minutes.toString().padLeft(2, "0") +
               ":" +
               seconds.toString().padLeft(2, "0");
+          print(_timeToShow);
+        });
+      },
+    );
+  }
 
-        },
-      );
+  @override
+  void initState() {
+    leftTime();
+    super.initState();
+  }
 
-    }
+  @override
+  void dispose() {
+    leftTime();
+    super.dispose();
   }
 
   @override
@@ -125,7 +110,7 @@ class _ConfirmScreenState extends State<ConfirmScreen> {
               Visibility(
                 visible: _isTimeVisible,
                 child: Text(
-                  'Вы можете отправить код повторно \nчерез: $_result',
+                  'Вы можете отправить код повторно \nчерез:$_timeToShow',
                   style: Constants.kHeader2TextStyle,
                 ),
               ),

@@ -19,7 +19,7 @@ class SevenFood extends StatelessWidget {
         primaryColor: AppColors.primary,
         platform: TargetPlatform.iOS,
       ),
-      initialRoute: OnBoarding.id,
+      initialRoute: ForgotPasswordScreen.id,
       routes: {
         OnBoarding.id: (context) => const OnBoarding(),
         LoginScreen.id: (context) => const LoginScreen(),
